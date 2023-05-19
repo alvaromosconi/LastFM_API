@@ -1,0 +1,15 @@
+.gradle
+/local.properties
+# IntelliJ Files
+.idea/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+.floo
+.flooignore
+local.properties
