@@ -1,6 +1,6 @@
 package com.example.lastfmapi.external
 
-import ayds.lisboa.songinfo.moredetails.domain.entities.Biography.ArtistBiography
+
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
@@ -15,9 +15,9 @@ private const val ESCAPED_NEW_LINE = "\\n"
 private const val DEFAULT_STRING = ""
 private const val JSON_ARTIST = "artist"
 
-internal class LastFMAPIToBiographyResolver {
+class LastFMAPIToBiographyResolver {
 
-    fun getArtistBiography(callResponse: Response<String>): ArtistBiography {
+     fun getArtistBiography(callResponse: Response<String>): ArtistBiography {
         val artist = getArtistFromCallResponse(callResponse)
         val artistInfo = getArtistInfoFromResponse(artist)
         val artistUrl = getArtistUrl(artist)

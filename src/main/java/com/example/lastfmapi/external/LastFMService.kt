@@ -1,6 +1,5 @@
 package com.example.lastfmapi.external
 
-import ayds.lisboa.songinfo.moredetails.domain.entities.Biography.ArtistBiography
 import retrofit2.Response
 
 
@@ -8,7 +7,7 @@ interface LastFMService {
     fun getArtistBiography(artistName: String): ArtistBiography?
 }
 
-internal class LastFMServiceImpl(
+class LastFMServiceImpl(
     private val lastFMAPIToBiographyResolver: LastFMAPIToBiographyResolver,
     private val lastFMAPI: LastFMAPI
 ): LastFMService {
