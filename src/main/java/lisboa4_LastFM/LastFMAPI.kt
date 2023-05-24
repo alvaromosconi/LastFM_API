@@ -1,4 +1,4 @@
-package com.example.lastfmapi.external
+package lisboa4_LastFM
 
 import retrofit2.Call
 import retrofit2.http.GET

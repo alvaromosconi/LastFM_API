@@ -1,4 +1,4 @@
-package com.example.lastfmapi.external
+package lisboa4_LastFM
 
 
 import com.google.gson.Gson
@@ -15,9 +15,12 @@ private const val ESCAPED_NEW_LINE = "\\n"
 private const val DEFAULT_STRING = ""
 private const val JSON_ARTIST = "artist"
 
-class LastFMAPIToBiographyResolver {
+interface LastFMAPIToBiographyResolver{
+    fun getArtistBiography(callResponse: Response<String>): ArtistBiography
+}
+class LastFMAPIToBiographyResolverImpl: LastFMAPIToBiographyResolver {
 
-     fun getArtistBiography(callResponse: Response<String>): ArtistBiography {
+     override fun getArtistBiography(callResponse: Response<String>): ArtistBiography {
         val artist = getArtistFromCallResponse(callResponse)
         val artistInfo = getArtistInfoFromResponse(artist)
         val artistUrl = getArtistUrl(artist)

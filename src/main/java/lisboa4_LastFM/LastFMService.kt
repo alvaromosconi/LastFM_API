@@ -1,4 +1,4 @@
-package com.example.lastfmapi.external
+package lisboa4_LastFM
 
 import retrofit2.Response
 
@@ -12,10 +12,13 @@ class LastFMServiceImpl(
     private val lastFMAPI: LastFMAPI
 ): LastFMService {
 
-    override fun getArtistBiography(artistName: String): ArtistBiography? {
-        val callResponse = getArtistFromLastFMAPI(artistName)
-        return lastFMAPIToBiographyResolver.getArtistBiography(callResponse)
-    }
+    override fun getArtistBiography(artistName: String): ArtistBiography? =
+        try {
+            val callResponse = getArtistFromLastFMAPI(artistName)
+            lastFMAPIToBiographyResolver.getArtistBiography(callResponse)
+        }catch (e: Exception){
+            null
+        }
 
     private fun getArtistFromLastFMAPI(artistName: String): Response<String> {
         return lastFMAPI.getArtistInfo(artistName).execute()
