@@ -1,4 +1,4 @@
-package lisboa4_LastFM
+package lisboa4LastFM
 
 import retrofit2.Response
 
@@ -7,7 +7,7 @@ interface LastFMService {
     fun getArtistBiography(artistName: String): ArtistBiography?
 }
 
-class LastFMServiceImpl(
+internal class LastFMServiceImpl(
     private val lastFMAPIToBiographyResolver: LastFMAPIToBiographyResolver,
     private val lastFMAPI: LastFMAPI
 ): LastFMService {

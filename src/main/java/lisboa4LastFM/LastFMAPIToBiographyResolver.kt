@@ -1,4 +1,4 @@
-package lisboa4_LastFM
+package lisboa4LastFM
 
 
 import com.google.gson.Gson
@@ -18,7 +18,7 @@ private const val JSON_ARTIST = "artist"
 interface LastFMAPIToBiographyResolver{
     fun getArtistBiography(callResponse: Response<String>): ArtistBiography
 }
-class LastFMAPIToBiographyResolverImpl: LastFMAPIToBiographyResolver {
+internal class LastFMAPIToBiographyResolverImpl: LastFMAPIToBiographyResolver {
 
      override fun getArtistBiography(callResponse: Response<String>): ArtistBiography {
         val artist = getArtistFromCallResponse(callResponse)

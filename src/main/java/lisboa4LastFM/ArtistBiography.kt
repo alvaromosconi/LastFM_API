@@ -1,4 +1,4 @@
-package lisboa4_LastFM
+package lisboa4LastFM
 
 data class ArtistBiography(
     var artistInfo: String,

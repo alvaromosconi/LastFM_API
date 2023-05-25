@@ -1,4 +1,4 @@
-package lisboa4_LastFM
+package lisboa4LastFM
 
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
